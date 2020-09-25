@@ -1,19 +1,25 @@
-import pygame
-from pygame.locals import *
+try:
+    import pygame
+    from pygame.locals import *
+except:
+    print('You do not have the pygame module installed. You can do this by typing "pip install pygame" in the CMD command line')
 import time
 import random
 pygame.init() #sets up pygame
 
 clock = pygame.time.Clock()
 
+filepath = (__file__)
+filepath = (filepath[:(len(filepath)-13)])
+
 win = pygame.display.set_mode((400,600))
 pygame.display.set_caption('Flappy Bird') 
-bg = pygame.image.load('C:/Users/200309/Desktop/programs/flappybird/birdbg.png')
-b_i = pygame.image.load('C:/Users/200309/Desktop/programs/flappybird/f_bird.png')
-b_j = pygame.image.load('C:/Users/200309/Desktop/programs/flappybird/bird_jump.png')
-b_d = pygame.image.load('C:/Users/200309/Desktop/programs/flappybird/bird_d.png')
-p_1 = pygame.image.load('C:/Users/200309/Desktop/programs/flappybird/pipe_1.png')
-p_2 = pygame.image.load('C:/Users/200309/Desktop/programs/flappybird/pipe_2.png')
+bg = pygame.image.load(filepath + 'birdbg.png')
+b_i = pygame.image.load(filepath + 'f_bird.png')
+b_j = pygame.image.load(filepath + 'bird_jump.png')
+b_d = pygame.image.load(filepath + 'bird_d.png')
+p_1 = pygame.image.load(filepath + 'pipe_1.png')
+p_2 = pygame.image.load(filepath + 'pipe_2.png')
 score = 0                                 #creates screen, caption, background, and score counter
 
 font = pygame.font.Font('freesansbold.ttf', 24)
